@@ -1,0 +1,167 @@
+.navbar,
+.page-header h1,
+.page-header p,
+.card {
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.navbar {
+    animation: slidedown 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+.page-header h1{
+    animation: fadeinup 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.4s;
+}
+
+.page-header P {
+    animation: fadeinup 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.6s;
+}
+
+.card:nth-child(1) {
+    animation: fadeinup 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.8s;
+}
+
+.card:nth-child(2) {
+    animation: fadeinup 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.0s;
+}
+
+.card:nth-child(3) {
+    animation: fadeinup 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes slidedown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeinup {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo .eye {
+    display: inline-block;
+    transform-origin: center;
+    animation: constantblink 3s infinite;
+}
+
+@keyframes constantblink {
+    0%, 96%, 100% {
+        transform: scaleY(1);
+    }
+    98% {
+        transform: scaleY(0.1);
+    }
+}
+
+.firefly-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.firefly {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ffeb3b;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.firefly-1 {
+    top: 80%;
+    left: 10%;
+    animation: driftone 12s infinite ease-in-out;
+}
+
+.firefly-2 {
+    top: 60%;
+    left: 80%;
+    animation: drifttwo 15s infinite ease-in-out;
+    animation-delay: 2s;
+}
+
+.firefly-3 {
+    top: 40%;
+    left: 45%;
+    animation: driftthree 10s infinite ease-in-out;
+    animation-delay: 5s;
+}
+
+@keyframes driftone {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+    50% { transform: translateY(-80px) translateX(30px); opacity: 0.8; }
+}
+
+@keyframes drifttwo {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+    50% { transform: translateY(-120px) translateX(-50px); opacity: 0.7; }
+}
+
+@keyframes driftthree {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+    50% { transform: translateY(-60px) translateX(40px); opacity: 0.9; }
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #7c0808, #fbff00);
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-links a::before {
+    content: '🌟';
+    position: absolute;
+    bottom: -12px;
+    right: -15px;
+    font-size: 10px;
+    transform: scale(0) rotate(-45deg);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 0.2s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover::before {
+    transform: scale(1) rotate(0deg);
+}
+
+.page-header h1,
+.page-header p {
+    position: relative;
+    z-index: 2;
+}
